@@ -1,0 +1,17 @@
+{
+  "name": "IT Ready — Windows 11 self-check",
+  "short_name": "IT Ready",
+  "description": "Visual employee troubleshooting and IT report creator",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fc",
+  "theme_color": "#102442",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
