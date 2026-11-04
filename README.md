@@ -1,21 +1,36 @@
-# IT Ready — visual Windows 11 self-check
+# IT Ready — Windows 11 Pre-Support Checklist
 
-An interactive, mobile-friendly employee troubleshooting guide. Follow illustrated Windows 11 steps, open test websites directly, tap results, and copy a structured report for IT.
+A visual, mobile-friendly troubleshooting checklist for employees to complete before calling IT.
 
-## Features
-- Eight guided checks: Windows uptime, restart, internet speed, public IP, general websites, Wi-Fi (Blue / Fiat), six websites on Blue only, and Windows app responsiveness.
-- Direct test links where a browser can perform the check. Windows-only actions must be performed on the affected PC.
-- Clear visual instructions, large touch buttons, auto-skip of Blue-only tests when not connected to Blue, and ability to mark tests unable to complete.
-- Final report can be **copied**, **saved as text**, or **printed**. There is no email form, email destination, automatic upload, tracking script, or backend.
-- Results remain in the browser's local storage until cleared.
+## Checks, in order
 
-## Important: private access before publishing
-This repository is private, but a typical GitHub Pages website would still be public. Do **not** publish it as a publicly accessible site if only approved employees should be able to see it. Use an authenticated hosting service with a verified allowlist of employee email accounts, e.g. Cloudflare Pages with Cloudflare Access protecting the **production** URL, not just previews.
+1. Check uptime in Task Manager → Performance → CPU.
+2. Restart **only if uptime is several days** (the app skips the restart step otherwise).
+3. Check the connected Wi-Fi name: Blue / Fiat / other.
+4. Check VPN status without changing it.
+5. Test **all six international websites** in Chrome: YouTube, Facebook, Gmail, Telegram Web, WhatsApp Web and OpenAI.
+6. Test **all three Iranian websites** in Chrome, regardless of international-site results: Digikala, Divar and Varzesh3.
+7. Run Speedtest; record ping, download and upload.
+8. Check public IP via a direct IP lookup link.
+9. Open CMD and run `ipconfig /all`; look for DNS Servers (no changes).
+10. Run `ping 8.8.8.8`; note reply or timeout.
+11. Run `nslookup google.com`; note addresses or DNS error.
+12. **Copy Report**; the app does not send email or upload anything.
 
-After deployment to Cloudflare Pages, the initial address would usually resemble `https://it-ready.pages.dev` if that project name is available. The final address is assigned during setup; this is not an active link yet.
+The app provides clickable website names/logos and command-copy buttons. Original brand marks are included for YouTube, Facebook, Telegram, WhatsApp, Google, and Chrome. Some website icons are remotely loaded and may be unavailable offline.
 
-## Source
-- `index.html`: complete self-contained application with embedded illustrations
-- `favicon.svg`, `manifest.webmanifest`: app icon and metadata
+## Screenshot policy
 
-The visuals are Windows 11-style illustrations, **not actual screenshots**. Uptime, IP, internet speed, and Windows app behavior are not automatically measured: employees record their observed results. To measure a Windows PC, open the relevant links on that PC rather than on a phone.
+Relevant **real screenshot references** are linked on every step. Screenshots are not embedded locally because their publisher image files were not available for reliable bundling; the app clearly identifies them as external sources and provides a fallback link instead of presenting fabricated screenshots. Users' Windows version, network names and screen results may differ from the reference.
+
+## Private access
+
+The repository is private, and the site is **not published**. A private GitHub repository does NOT mean a published GitHub Pages site is employee-only. Configure **authenticated hosting** with an approved-employee allowlist before sharing any production website link. The final URL will depend on the chosen platform and domain setup.
+
+## Technical notes
+
+- Static `index.html` (no server needed to run the file locally).
+- Responses are saved in browser local storage, not transmitted to IT.
+- The user must explicitly copy/paste or save the report.
+- The site links open separately; employees should run Windows checks on the *affected computer*, not their phone.
+- Do not ask employees to change DNS settings, reset adapters, or run administrative commands.
