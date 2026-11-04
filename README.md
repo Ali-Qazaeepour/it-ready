@@ -1,37 +1,21 @@
-# IT Ready — Employee Windows 11 self-check
+# IT Ready — visual Windows 11 self-check
 
-A visual, mobile-friendly troubleshooting assistant for employees. Follow illustrated Windows 11 steps, record results, and prepare a detailed email for IT.
+An interactive, mobile-friendly employee troubleshooting guide. Follow illustrated Windows 11 steps, open test websites directly, tap results, and copy a structured report for IT.
 
-## What it does
+## Features
+- Eight guided checks: Windows uptime, restart, internet speed, public IP, general websites, Wi-Fi (Blue / Fiat), six websites on Blue only, and Windows app responsiveness.
+- Direct test links where a browser can perform the check. Windows-only actions must be performed on the affected PC.
+- Clear visual instructions, large touch buttons, auto-skip of Blue-only tests when not connected to Blue, and ability to mark tests unable to complete.
+- Final report can be **copied**, **saved as text**, or **printed**. There is no email form, email destination, automatic upload, tracking script, or backend.
+- Results remain in the browser's local storage until cleared.
 
-- Guides employees through eight checks (uptime, restart, speed test, public IP, website access, Blue/Fiat Wi-Fi, six Blue-only sites, and Windows application performance).
-- Tracks completed steps, with an **Unable to test** option.
-- Gives tentative guidance on whether a problem looks computer-, network-, or website-related.
-- Creates an IT report with optional employee, department, computer, and problem details.
-- **Prepare email to IT** opens the employee's email application with a drafted report addressed to `ali.qazaeepour@gmail.com`; the employee must press Send.
-- Copy, save, or print the report; answers remain in the device's browser local storage until cleared.
+## Important: private access before publishing
+This repository is private, but a typical GitHub Pages website would still be public. Do **not** publish it as a publicly accessible site if only approved employees should be able to see it. Use an authenticated hosting service with a verified allowlist of employee email accounts, e.g. Cloudflare Pages with Cloudflare Access protecting the **production** URL, not just previews.
 
-## Employee access — PRIVATE BY DESIGN
+After deployment to Cloudflare Pages, the initial address would usually resemble `https://it-ready.pages.dev` if that project name is available. The final address is assigned during setup; this is not an active link yet.
 
-**Do not publish via GitHub Pages without proper access control.** A private GitHub repository protects the source code, but GitHub Pages published from an individual account is not an employee-only website. Private GitHub Pages access control requires a qualifying GitHub Enterprise Cloud organization.
+## Source
+- `index.html`: complete self-contained application with embedded illustrations
+- `favicon.svg`, `manifest.webmanifest`: app icon and metadata
 
-To let **only invited employees** use a normal website link, deploy this site from this private repository to a platform with **server-side sign-in restrictions** (for example, Cloudflare Pages protected by Cloudflare Zero Trust Access). Configure an **Allow policy listing approved employee emails**, require email verification, and test with one invited and one uninvited email **before sharing the link**. The default Cloudflare Pages preview access policy alone does **not** protect the production pages.dev URL; the production URL must be covered too. See Cloudflare's official documentation: https://developers.cloudflare.com/pages/platform/known-issues/#enable-access-on-your-pagesdev-domain
-
-Until an access policy is configured and verified, leave the website unpublished.
-
-## Files
-
-- `index.html`: complete self-contained UI, interactive steps and all inline illustrations
-- `favicon.svg`, `manifest.webmanifest`: icon and install metadata
-
-No backend, database, tracking scripts, or automatic network collection. The site must not be treated as securely restricted until the hosting authentication policy is active.
-
-## Updating the IT email
-
-In `index.html`, replace `itEmail:'ali.qazaeepour@gmail.com'` with the chosen IT address. Users can also edit the recipient on the report screen.
-
-## Notes
-
-Illustrations are **original Windows-style drawings, not genuine Windows screenshots**. The app does not automatically measure internet speed, IP, or uptime. The employee enters results manually. A configured mail application is needed for the mailto link. For a webmail workflow, employees can copy the report.
-
-For security incidents, skip the checklist and contact IT directly.
+The visuals are Windows 11-style illustrations, **not actual screenshots**. Uptime, IP, internet speed, and Windows app behavior are not automatically measured: employees record their observed results. To measure a Windows PC, open the relevant links on that PC rather than on a phone.
