@@ -17,11 +17,11 @@ A visual, mobile-friendly troubleshooting checklist for employees to complete be
 11. Run `nslookup google.com`; note addresses or DNS error.
 12. **Copy Report**; the app does not send email or upload anything.
 
-The app provides clickable website names/logos and command-copy buttons. Original brand marks are included for YouTube, Facebook, Telegram, WhatsApp, Google, and Chrome. Some website icons are remotely loaded and may be unavailable offline.
+The only external hyperlinks in the app open websites that employees are explicitly asked to test: the international and Iranian sites, Speedtest, and public-IP lookup. Windows command buttons copy exact commands. Brand marks are included for YouTube, Facebook, Telegram, WhatsApp, Google, and Chrome. Some website icons require internet.
 
 ## Screenshot policy
 
-Relevant **real screenshot references** are linked on every step. Screenshots are not embedded locally because their publisher image files were not available for reliable bundling; the app clearly identifies them as external sources and provides a fallback link instead of presenting fabricated screenshots. Users' Windows version, network names and screen results may differ from the reference.
+Relevant **real screenshot references** now display inline (not as clickable source links) and require an internet connection to load. If an external image host blocks access, the guide shows a non-interactive fallback instead of fabricating a screenshot. The actual image files have not been bundled, so this is not yet a reliable offline screenshot experience. Users' Windows version, network names and results may differ from the reference.
 
 ## Private access
 
